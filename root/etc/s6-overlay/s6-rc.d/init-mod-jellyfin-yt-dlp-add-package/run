@@ -7,18 +7,6 @@
 if ! command -v yt-dlp; then
     echo "**** Adding yt-dlp and its deps to package install lists ****"
     echo "yt-dlp" >> /mod-pip-packages-to-install.list
-    ## Ubuntu
-    if [ -f /usr/bin/apt ]; then
-        echo "\
-            python3 \
-            python3-pip" >> /mod-repo-packages-to-install.list
-    fi
-    # Alpine
-    if [ -f /sbin/apk ]; then
-        echo "\
-            python3 \
-            py3-pip" >> /mod-repo-packages-to-install.list
-    fi
 else
     echo "**** yt-dlp already installed, skipping ****"
 fi
